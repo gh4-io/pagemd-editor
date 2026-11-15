@@ -1,0 +1,15 @@
+{
+  "name": "@pagemd-editor/comments-margin",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "description": "The Comments panel (P12, ADR-0015, R-181): threads next to the page, new / reply / resolve / delete, and the list of orphans.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@pagemd-editor/core": "0.0.0"
+  }
+}

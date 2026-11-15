@@ -1,0 +1,12 @@
+/* ============================================================================
+   Invitation Layout - Page Margins Only
+   ============================================================================
+   Single-page, portrait, generous margins for an elegant look. No running
+   header/footer, so none of the Paged.js string-set plumbing corporate-sop
+   needs applies here.
+   ============================================================================ */
+
+@page {
+  size: Letter;
+  margin: 1.25in;
+}

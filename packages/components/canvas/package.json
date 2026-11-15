@@ -1,0 +1,21 @@
+{
+  "name": "@pagemd-editor/canvas",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "description": "Hosts the ProseMirror view inside .pmd-canvas (P2), with plugin-contributed behaviour (P3).",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@pagemd-editor/core": "0.0.0",
+    "prosemirror-commands": "1.7.2",
+    "prosemirror-keymap": "1.2.3",
+    "prosemirror-model": "1.25.12",
+    "prosemirror-schema-list": "1.5.1",
+    "prosemirror-state": "1.4.4",
+    "prosemirror-view": "1.42.6"
+  }
+}

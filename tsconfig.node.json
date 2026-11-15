@@ -1,0 +1,21 @@
+{
+  "//": "Node side: the extension host, all tests, the vscode mock and tool configs. DOM types since P9 (AD-P9-04): the host's symbol provider reads documents with the editor's presets, whose canvas node views (never run on the host) use browser types.",
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2023", "DOM"],
+    "types": ["node", "vscode"]
+  },
+  "include": [
+    "apps/vscode/host",
+    "packages/preset-pagemd/src/shared/pagemd-modules.d.ts",
+    "apps/vscode/shared",
+    "apps/vscode/test",
+    "packages/*/test",
+    "test/**/*.ts",
+    "__mocks__",
+    "vitest.config.ts",
+    "playwright.config.ts"
+  ],
+  "//exclude": "Browser-code tests: tsconfig.web-tests.json.",
+  "exclude": ["apps/vscode/test/webview.test.ts", "apps/vscode/test/ribbon-app.test.ts", "apps/vscode/test/cohesion-surfaces.test.ts", "packages/plugin-keymap/test", "test/e2e", "packages/preset-pagemd/test", "packages/plugin-source-map/test", "packages/plugin-diagnostics/test"]
+}

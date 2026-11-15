@@ -1,0 +1,18 @@
+{
+  "name": "@pagemd-editor/pagination",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "description": "Print Layout's pages (P6): approximate page breaks measured from the rendered canvas, drawn as gaps between pages.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@pagemd-editor/core": "0.0.0",
+    "prosemirror-model": "1.25.12",
+    "prosemirror-state": "1.4.4",
+    "prosemirror-view": "1.42.6"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "@pagemd-editor/preview-frame",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "description": "Print Preview's frame (P10): shows the page an output provider made (pagemd's render with Paged.js, or plain HTML), read-only, with Refresh.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@pagemd-editor/core": "0.0.0"
+  }
+}

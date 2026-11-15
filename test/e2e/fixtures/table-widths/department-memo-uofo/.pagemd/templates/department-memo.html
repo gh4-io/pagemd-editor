@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{metadata.title}}</title>
+    {{styles}}
+  </head>
+  <body>
+    <!--
+    ========================================================================
+    STRING-SET CAPTURE ELEMENTS FOR PAGED.JS
+    ========================================================================
+    -->
+    <div
+      class="string-capture"
+      style="height: 0; overflow: hidden; font-size: 0"
+    >
+      <span class="document-id-string">{{metadata.doc_id}}</span>
+      <span class="footer-left-string"
+        >{{metadata.status ?? "INTERNAL"}} - {{metadata.controlled_doc ?
+        "Controlled" : "Uncontrolled"}} Document</span
+      >
+      <span class="header-right-string">{{metadata.document_id}}</span>
+      <span class="header-left-string">{{metadata.doc_type}}</span>
+    </div>
+
+    <article class="department-memo">
+      <!--
+      DEPARTMENT MEMORANDUM TEMPLATE
+      ==============================
+      Simple, direct interdepartmental memo format.
+
+      FRONTMATTER VARIABLES:
+      - doc_id: Memo reference number (e.g., "UOFO-MEMO-2026-001")
+      - title: Memo subject line
+      - dept: Recipient department/group
+      - from: (optional) Sender name and title
+      - date: Memo date
+      - cc: (optional) Carbon copy recipients
+      - status: (optional) Document status for footer
+      -->
+
+      <!-- MEMO HEADER -->
+      <header class="memo-header">
+        <!-- Top Row: Logo + MEMORANDUM label -->
+        <div class="memo-top-row">
+          <div class="memo-logo">
+            <img
+              src=".pagemd/assets/img/uofo-logo.png"
+              alt="{{metadata.company_name ?? 'Uncertified Organic Farmers Org'}}"
+              class="header-logo"
+            />
+          </div>
+          <div class="doc-title">{{metadata.title}}</div>
+          <div class="doc-metadata">
+            <div class="meta-line memo-id">{{metadata.document_id}}</div>
+            <div class="memo-label">MEMORANDUM</div>
+          </div>
+        </div>
+
+        <!-- Memo Fields -->
+        <div class="memo-fields">
+          <div class="memo-field">
+            <span class="field-label">TO:</span>
+            <span class="field-value">{{metadata.dept}}</span>
+          </div>
+          {{#if metadata.from}}
+          <div class="memo-field">
+            <span class="field-label">FROM:</span>
+            <span class="field-value">{{metadata.from}}</span>
+          </div>
+          {{/if}}
+          <div class="memo-field">
+            <span class="field-label">DATE:</span>
+            <span class="field-value">{{metadata.effective_date}}</span>
+          </div>
+          <div class="memo-field">
+            <span class="field-label">SUBJECT:</span>
+            <span class="field-value field-subject">{{metadata.title}}</span>
+          </div>
+          {{#if metadata.cc}}
+          <div class="memo-field">
+            <span class="field-label">CC:</span>
+            <span class="field-value">{{metadata.cc}}</span>
+          </div>
+          {{/if}}
+        </div>
+      </header>
+
+      <!-- MEMO CONTENT -->
+      <main class="memo-content">{{content}}</main>
+    </article>
+  </body>
+</html>

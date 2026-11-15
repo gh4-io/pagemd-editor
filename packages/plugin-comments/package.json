@@ -1,0 +1,18 @@
+{
+  "name": "@pagemd-editor/plugin-comments",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "description": "Review comments (P12, ADR-0015): the thread model and its side file, the checks that match anchors to threads, and the tint on commented blocks.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@pagemd-editor/core": "0.0.0",
+    "prosemirror-model": "1.25.12",
+    "prosemirror-state": "1.4.4",
+    "prosemirror-view": "1.42.6"
+  }
+}

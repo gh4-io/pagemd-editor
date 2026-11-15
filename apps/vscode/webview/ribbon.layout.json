@@ -1,0 +1,785 @@
+{
+  "version": 1,
+  "tabs": [
+    {
+      "id": "home",
+      "label": "Home",
+      "groups": [
+        {
+          "id": "home-quick",
+          "label": "Quick access",
+          "icon": "save",
+          "commands": [
+            "file.save",
+            "history.undo",
+            "history.redo"
+          ],
+          "sizes": {
+            "file.save": "large",
+            "history.undo": "large",
+            "history.redo": "large"
+          }
+        },
+        {
+          "id": "home-text",
+          "label": "Text",
+          "icon": "bold",
+          "commands": [
+            "strong.toggle",
+            "emphasis.toggle",
+            "code.toggle",
+            "strikethrough.toggle"
+          ],
+          "sizes": {
+            "strong.toggle": "large",
+            "emphasis.toggle": "large"
+          },
+          "titles": {
+            "strikethrough.toggle": "Strike"
+          }
+        },
+        {
+          "id": "home-styles",
+          "label": "Styles",
+          "icon": "text-size",
+          "commands": [
+            "paragraph.set",
+            "heading.h1",
+            "heading.h2",
+            "heading.h3",
+            "heading.h4",
+            "heading.h5",
+            "heading.h6"
+          ]
+        },
+        {
+          "id": "home-lists",
+          "label": "Lists",
+          "icon": "list-unordered",
+          "commands": [
+            "lists.bullet",
+            "lists.ordered",
+            "fancy-lists.lower-alpha",
+            "fancy-lists.upper-alpha",
+            "fancy-lists.lower-roman",
+            "fancy-lists.upper-roman"
+          ],
+          "sizes": {
+            "lists.bullet": "large",
+            "lists.ordered": "large"
+          },
+          "titles": {
+            "lists.bullet": "Bullets",
+            "lists.ordered": "Numbers",
+            "fancy-lists.lower-alpha": "a. b. c.",
+            "fancy-lists.upper-alpha": "A. B. C.",
+            "fancy-lists.lower-roman": "i. ii. iii.",
+            "fancy-lists.upper-roman": "I. II. III."
+          }
+        },
+        {
+          "id": "home-tasks",
+          "label": "Tasks",
+          "icon": "checklist",
+          "commands": [
+            "task-lists.toggle"
+          ],
+          "sizes": {
+            "task-lists.toggle": "large"
+          }
+        },
+        {
+          "id": "home-blocks",
+          "label": "Blocks",
+          "icon": "quote",
+          "commands": [
+            "blockquote.toggle"
+          ],
+          "sizes": {
+            "blockquote.toggle": "large"
+          }
+        },
+        {
+          "id": "home-editing",
+          "label": "Editing",
+          "icon": "search",
+          "commands": [
+            "find.open",
+            "find.replace"
+          ],
+          "sizes": {
+            "find.open": "large",
+            "find.replace": "large"
+          }
+        }
+      ]
+    },
+    {
+      "id": "insert",
+      "label": "Insert",
+      "groups": [
+        {
+          "id": "insert-basics",
+          "label": "Basics",
+          "icon": "table",
+          "commands": [
+            "table.insert",
+            "link.insert",
+            "code_block.toggle",
+            "mermaid.insert",
+            "wikilinks.insert",
+            "rule.insert"
+          ],
+          "sizes": {
+            "table.insert": "large",
+            "link.insert": "large",
+            "code_block.toggle": "large",
+            "mermaid.insert": "large"
+          },
+          "titles": {
+            "rule.insert": "Line"
+          }
+        },
+        {
+          "id": "insert-notes",
+          "label": "Notes",
+          "icon": "note",
+          "commands": [
+            "footnotes.insert"
+          ],
+          "sizes": {
+            "footnotes.insert": "large"
+          }
+        },
+        {
+          "id": "insert-pictures",
+          "label": "Pictures",
+          "icon": "file-media",
+          "commands": [
+            "image.insert",
+            "figure.insert",
+            "annotated-image.insert",
+            "embeds.insert",
+            "figure.make-readable"
+          ],
+          "sizes": {
+            "image.insert": "large",
+            "figure.insert": "large",
+            "annotated-image.insert": "large"
+          },
+          "titles": {
+            "embeds.insert": "Embed",
+            "figure.make-readable": "Make readable",
+            "annotated-image.insert": "Annotate"
+          }
+        },
+        {
+          "id": "insert-box",
+          "label": "Box",
+          "icon": "symbol-structure",
+          "commands": [
+            "containers.details",
+            "containers.summary",
+            "containers.aside",
+            "containers.columns",
+            "containers.spoiler",
+            "containers.warning",
+            "containers.caution",
+            "containers.note",
+            "containers.important",
+            "containers.tip",
+            "containers.document-header",
+            "containers.title-block",
+            "containers.applicability-box",
+            "containers.approval-block",
+            "containers.footer-notice",
+            "attribute-container.insert"
+          ]
+        },
+        {
+          "id": "insert-callout",
+          "label": "Callout",
+          "icon": "info",
+          "commands": [
+            "alert.note",
+            "alert.tip",
+            "alert.important",
+            "alert.warning",
+            "alert.caution",
+            "callouts.warning",
+            "callouts.danger",
+            "inline-callout.warning",
+            "inline-callout.danger"
+          ]
+        },
+        {
+          "id": "insert-include",
+          "label": "Include",
+          "icon": "file-symlink-file",
+          "commands": [
+            "include.insert",
+            "include-directive.insert"
+          ],
+          "sizes": {
+            "include.insert": "large"
+          },
+          "titles": {
+            "include.insert": "Include",
+            "include-directive.insert": "Placeholder"
+          }
+        }
+      ]
+    },
+    {
+      "id": "table",
+      "label": "Table",
+      "groups": [
+        {
+          "id": "table-rows",
+          "label": "Rows",
+          "icon": "arrow-down",
+          "commands": [
+            "table.add-row-above",
+            "table.add-row-below",
+            "table.delete-row",
+            "table.move-row-up",
+            "table.move-row-down"
+          ],
+          "sizes": {
+            "table.add-row-above": "large",
+            "table.add-row-below": "large"
+          },
+          "titles": {
+            "table.add-row-above": "Add above",
+            "table.add-row-below": "Add below",
+            "table.delete-row": "Delete",
+            "table.move-row-up": "Move up",
+            "table.move-row-down": "Move down"
+          }
+        },
+        {
+          "id": "table-columns",
+          "label": "Columns",
+          "icon": "arrow-right",
+          "commands": [
+            "table.add-column-left",
+            "table.add-column-right",
+            "table.delete-column",
+            "table.move-column-left",
+            "table.move-column-right"
+          ],
+          "sizes": {
+            "table.add-column-left": "large",
+            "table.add-column-right": "large"
+          },
+          "titles": {
+            "table.add-column-left": "Add left",
+            "table.add-column-right": "Add right",
+            "table.delete-column": "Delete",
+            "table.move-column-left": "Move left",
+            "table.move-column-right": "Move right"
+          }
+        },
+        {
+          "id": "table-cells",
+          "label": "Cells",
+          "icon": "combine",
+          "commands": [
+            "table.merge-cells",
+            "table.split-cell",
+            "table.header-row"
+          ],
+          "sizes": {
+            "table.merge-cells": "large",
+            "table.split-cell": "large"
+          },
+          "titles": {
+            "table.merge-cells": "Merge",
+            "table.split-cell": "Split"
+          }
+        },
+        {
+          "id": "table-align",
+          "label": "Align",
+          "icon": "layout-panel-center",
+          "commands": [
+            "table.align-left",
+            "table.align-center",
+            "table.align-right",
+            "table.align-none"
+          ],
+          "titles": {
+            "table.align-left": "Left",
+            "table.align-center": "Center",
+            "table.align-right": "Right",
+            "table.align-none": "None"
+          }
+        },
+        {
+          "id": "table-width",
+          "label": "Width",
+          "icon": "symbol-ruler",
+          "commands": [
+            "table.column-wider",
+            "table.column-narrower",
+            "table.equal-widths",
+            "table.reset-widths",
+            "table.fit-column"
+          ],
+          "sizes": {
+            "table.column-wider": "large",
+            "table.column-narrower": "large"
+          },
+          "titles": {
+            "table.column-wider": "Wider",
+            "table.column-narrower": "Narrower",
+            "table.equal-widths": "Equal",
+            "table.reset-widths": "Automatic",
+            "table.fit-column": "Fit"
+          }
+        },
+        {
+          "id": "table-table",
+          "label": "Table",
+          "icon": "table",
+          "commands": [
+            "table.fill-rows",
+            "table.fill-rows-split",
+            "table.delete"
+          ],
+          "sizes": {
+            "table.delete": "large"
+          },
+          "titles": {
+            "table.fill-rows": "Even out rows",
+            "table.fill-rows-split": "Span to cells"
+          }
+        }
+      ]
+    },
+    {
+      "id": "image",
+      "label": "Image",
+      "groups": [
+        {
+          "id": "image-shapes",
+          "label": "Shapes",
+          "icon": "pinned",
+          "commands": [
+            "annotated-image.add-marker",
+            "annotated-image.add-arrow",
+            "annotated-image.add-box",
+            "annotated-image.add-text",
+            "annotated-image.add-line",
+            "annotated-image.add-ellipse",
+            "annotated-image.add-highlight",
+            "annotated-image.renumber"
+          ],
+          "sizes": {
+            "annotated-image.add-marker": "large"
+          },
+          "titles": {
+            "annotated-image.add-marker": "Marker",
+            "annotated-image.add-arrow": "Arrow",
+            "annotated-image.add-box": "Box",
+            "annotated-image.add-text": "Text note",
+            "annotated-image.add-line": "Line",
+            "annotated-image.add-ellipse": "Ellipse",
+            "annotated-image.add-highlight": "Highlight",
+            "annotated-image.renumber": "Renumber"
+          },
+          "fold": 2,
+          "menu": false
+        },
+        {
+          "id": "image-edit",
+          "label": "Edit picture",
+          "icon": "screen-normal",
+          "commands": [
+            "image.crop",
+            "image.rotate-left",
+            "image.rotate-right",
+            "image.flip-horizontal",
+            "image.flip-vertical",
+            "image.redact",
+            "image.reset"
+          ],
+          "sizes": {
+            "image.crop": "large",
+            "image.reset": "large"
+          },
+          "titles": {
+            "image.flip-horizontal": "Flip H",
+            "image.flip-vertical": "Flip V",
+            "image.reset": "Reset"
+          },
+          "fold": 1,
+          "menu": false
+        },
+        {
+          "id": "image-size",
+          "label": "Size",
+          "icon": "screen-full",
+          "commands": [
+            "picture.width-full",
+            "picture.width-half",
+            "picture.width-third",
+            "picture.width-quarter",
+            "picture.width-original"
+          ],
+          "sizes": {
+            "picture.width-full": "large",
+            "picture.width-half": "large"
+          },
+          "titles": {
+            "picture.width-full": "Full",
+            "picture.width-half": "Half",
+            "picture.width-third": "Third",
+            "picture.width-quarter": "Quarter",
+            "picture.width-original": "Original"
+          },
+          "fold": 3
+        },
+        {
+          "id": "image-caption",
+          "label": "Caption",
+          "icon": "comment",
+          "commands": [
+            "picture.caption",
+            "picture.caption-remove"
+          ],
+          "sizes": {
+            "picture.caption": "large"
+          },
+          "titles": {
+            "picture.caption": "Caption",
+            "picture.caption-remove": "Remove"
+          },
+          "fold": 4
+        },
+        {
+          "id": "image-details",
+          "label": "Details",
+          "icon": "tag",
+          "commands": [
+            "picture.alt",
+            "picture.path",
+            "picture.properties"
+          ],
+          "sizes": {
+            "picture.alt": "large"
+          },
+          "titles": {
+            "picture.path": "Change",
+            "picture.properties": "Properties"
+          },
+          "fold": 5
+        }
+      ]
+    },
+    {
+      "id": "layout",
+      "label": "Layout",
+      "groups": [
+        {
+          "id": "layout-break",
+          "label": "Break",
+          "icon": "debug-step-over",
+          "commands": [
+            "pagebreak.insert"
+          ],
+          "sizes": {
+            "pagebreak.insert": "large"
+          }
+        },
+        {
+          "id": "layout-section",
+          "label": "Section",
+          "icon": "symbol-namespace",
+          "commands": [
+            "section.start",
+            "section.end"
+          ],
+          "sizes": {
+            "section.start": "large",
+            "section.end": "large"
+          }
+        },
+        {
+          "id": "layout-cover",
+          "label": "Cover",
+          "icon": "book",
+          "commands": [
+            "cover.start",
+            "cover.end"
+          ],
+          "sizes": {
+            "cover.start": "large",
+            "cover.end": "large"
+          }
+        },
+        {
+          "id": "layout-page",
+          "label": "Page layout",
+          "icon": "layout",
+          "commands": [
+            "layout.landscape",
+            "layout.default"
+          ],
+          "sizes": {
+            "layout.landscape": "large",
+            "layout.default": "large"
+          },
+          "titles": {
+            "layout.landscape": "Landscape",
+            "layout.default": "Default"
+          }
+        }
+      ]
+    },
+    {
+      "id": "document",
+      "label": "Document",
+      "groups": [
+        {
+          "id": "document-properties",
+          "label": "Properties",
+          "icon": "symbol-property",
+          "commands": [
+            "document.properties"
+          ],
+          "sizes": {
+            "document.properties": "large"
+          }
+        },
+        {
+          "id": "document-contents",
+          "label": "Contents",
+          "icon": "list-tree",
+          "commands": [
+            "toc.insert",
+            "index.insert"
+          ],
+          "sizes": {
+            "toc.insert": "large"
+          },
+          "titles": {
+            "toc.insert": "Contents"
+          }
+        },
+        {
+          "id": "document-output",
+          "label": "Output",
+          "icon": "open-preview",
+          "commands": [
+            "document.preview",
+            "document.export-pdf",
+            "document.export-html",
+            "document.export-png"
+          ],
+          "sizes": {
+            "document.preview": "large"
+          },
+          "titles": {
+            "document.preview": "Preview",
+            "document.export-pdf": "PDF",
+            "document.export-html": "HTML",
+            "document.export-png": "PNG"
+          }
+        },
+        {
+          "id": "document-profile",
+          "label": "Profile",
+          "icon": "symbol-namespace",
+          "commands": [
+            "document.profile"
+          ],
+          "sizes": {
+            "document.profile": "large"
+          }
+        },
+        {
+          "id": "document-files",
+          "label": "Files",
+          "icon": "link",
+          "commands": [
+            "document.files-in-use"
+          ],
+          "sizes": {
+            "document.files-in-use": "large"
+          },
+          "titles": {
+            "document.files-in-use": "Files"
+          }
+        },
+        {
+          "id": "document-check",
+          "label": "Check",
+          "icon": "checklist",
+          "commands": [
+            "document.check"
+          ],
+          "sizes": {
+            "document.check": "large"
+          },
+          "titles": {
+            "document.check": "Check"
+          }
+        }
+      ]
+    },
+    {
+      "id": "review",
+      "label": "Review",
+      "groups": [
+        {
+          "id": "review-comments",
+          "label": "Comments",
+          "icon": "comment-discussion",
+          "commands": [
+            "comments.new",
+            "comments.reply",
+            "comments.resolve",
+            "comments.previous",
+            "comments.next"
+          ],
+          "sizes": {
+            "comments.new": "large",
+            "comments.reply": "large",
+            "comments.resolve": "large"
+          },
+          "titles": {
+            "comments.new": "New",
+            "comments.previous": "Previous",
+            "comments.next": "Next"
+          }
+        },
+        {
+          "id": "review-index",
+          "label": "Index",
+          "icon": "symbol-key",
+          "commands": [
+            "index-marker.insert"
+          ],
+          "sizes": {
+            "index-marker.insert": "large"
+          },
+          "titles": {
+            "index-marker.insert": "Mark entry"
+          }
+        }
+      ]
+    },
+    {
+      "id": "view",
+      "label": "View",
+      "groups": [
+        {
+          "id": "view-mode",
+          "label": "View",
+          "icon": "file",
+          "commands": [
+            "view.print",
+            "view.web",
+            "view.draft",
+            "view.read",
+            "view.code",
+            "view.split"
+          ],
+          "sizes": {
+            "view.print": "large",
+            "view.web": "large",
+            "view.draft": "large",
+            "view.read": "large",
+            "view.code": "large",
+            "view.split": "large"
+          },
+          "titles": {
+            "view.print": "Print",
+            "view.web": "Web"
+          }
+        },
+        {
+          "id": "view-preview",
+          "label": "Preview",
+          "icon": "open-preview",
+          "commands": [
+            "view.preview"
+          ],
+          "sizes": {
+            "view.preview": "large"
+          },
+          "titles": {
+            "view.preview": "Preview"
+          }
+        },
+        {
+          "id": "view-pages",
+          "label": "Pages",
+          "icon": "split-vertical",
+          "commands": [
+            "view.vertical",
+            "view.side-by-side"
+          ],
+          "sizes": {
+            "view.vertical": "large",
+            "view.side-by-side": "large"
+          },
+          "titles": {
+            "view.vertical": "Vertical"
+          }
+        },
+        {
+          "id": "view-zoom",
+          "label": "Zoom",
+          "icon": "zoom-in",
+          "commands": [
+            "view.fit-page-width",
+            "view.fit-one-page",
+            "view.fit-multi-page",
+            "view.zoom-out",
+            "view.zoom-in",
+            "view.zoom-100"
+          ],
+          "sizes": {
+            "view.zoom-out": "large",
+            "view.zoom-in": "large",
+            "view.zoom-100": "large"
+          },
+          "titles": {
+            "view.fit-page-width": "Page width",
+            "view.fit-multi-page": "Multi-page"
+          }
+        },
+        {
+          "id": "view-split",
+          "label": "Split",
+          "icon": "split-vertical",
+          "commands": [
+            "view.stacked"
+          ],
+          "sizes": {
+            "view.stacked": "large"
+          }
+        },
+        {
+          "id": "view-panels",
+          "label": "Show",
+          "icon": "layout-sidebar-right",
+          "commands": [
+            "view.outline",
+            "view.ruler",
+            "view.inspector",
+            "view.comments"
+          ],
+          "sizes": {
+            "view.outline": "large",
+            "view.ruler": "large",
+            "view.inspector": "large",
+            "view.comments": "large"
+          }
+        }
+      ]
+    }
+  ]
+}

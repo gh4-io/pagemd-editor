@@ -1,0 +1,25 @@
+<!doctype html>
+<!-- Stand-in for the VS Code webview page: the same bundle, with a pretend host. `acquireVsCodeApi` records what
+     the webview sends (window.__toHost); tests answer through window.__fromHost, which arrives as a 'message'
+     event exactly as VS Code delivers host messages. -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>pagemd Editor webview (e2e)</title>
+    <link rel="stylesheet" href="../../apps/vscode/dist/webview/codicons/codicon.css" />
+    <script>
+      window.__toHost = [];
+      window.__pageState = JSON.parse(sessionStorage.getItem('pmd-page-state') || 'null');
+      window.acquireVsCodeApi = () => ({
+        postMessage: (message) => window.__toHost.push(structuredClone(message)),
+        // VS Code keeps a webview's state while its tab lives (P8: the Inspector open or closed); a reload keeps it here.
+        getState: () => window.__pageState,
+        setState: (state) => ((window.__pageState = state), sessionStorage.setItem('pmd-page-state', JSON.stringify(state))),
+      });
+      window.__fromHost = (message) => window.postMessage(message, '*');
+    </script>
+  </head>
+  <body>
+    <script src="../../apps/vscode/dist/webview/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "@pagemd-editor/slash-menu",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "description": "The / menu: search and insert any block or inline item (P7).",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@pagemd-editor/core": "0.0.0",
+    "prosemirror-state": "1.4.4",
+    "prosemirror-view": "1.42.6"
+  }
+}

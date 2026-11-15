@@ -1,0 +1,15 @@
+{
+  "name": "@pagemd-editor/split-view",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "description": "Split view's frame (P9): the Code view and the canvas side by side or stacked, with a divider to drag.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@pagemd-editor/core": "0.0.0"
+  }
+}

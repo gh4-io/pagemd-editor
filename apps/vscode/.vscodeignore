@@ -1,0 +1,19 @@
+# What goes into the .vsix (P13, AD-P13-01/02): only the built extension, its manifest and its documents.
+# Everything is bundled into dist/, so no node_modules and no source. Source maps stay in dist/ for debugging, never shipped.
+# (vsce applies the "!" lines after the ignore lines, so the includes below name what is wanted instead of "!dist/**".)
+**
+!package.json
+!README.md
+!CHANGELOG.md
+!ThirdPartyNotices.txt
+!LICENSE
+!NOTICE
+!dist/build-info.json
+!dist/host/extension.js
+!dist/host/pagemd/**
+!dist/webview/main.js
+!dist/webview/codicons/**
+!dist/webview/mermaid/**
+!dist/webview/monaco/**
+!dist/defaults/**
+**/*.map

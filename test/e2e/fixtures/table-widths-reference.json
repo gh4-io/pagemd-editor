@@ -1,0 +1,57 @@
+{
+  "generatedBy": "scripts/table-widths-reference.mjs",
+  "example": "examples/md/16-table-column-widths.md",
+  "pdfPages": 6,
+  "pageWidth": 612,
+  "probes": {
+    "Bolts": [
+      {
+        "page": 1,
+        "x": 80.2
+      }
+    ],
+    "Replace": [
+      {
+        "page": 1,
+        "x": 384
+      }
+    ],
+    "Inspect": [
+      {
+        "page": 3,
+        "x": 117.6
+      },
+      {
+        "page": 4,
+        "x": 117.6
+      },
+      {
+        "page": 5,
+        "x": 117.6
+      },
+      {
+        "page": 6,
+        "x": 117.6
+      }
+    ],
+    "Check": [
+      {
+        "page": 3,
+        "x": 337.2
+      },
+      {
+        "page": 4,
+        "x": 337.2
+      },
+      {
+        "page": 5,
+        "x": 337.2
+      },
+      {
+        "page": 6,
+        "x": 337.2
+      }
+    ]
+  },
+  "fingerprint": "3b858741abe817eb"
+}

@@ -1,0 +1,12 @@
+pagemd Editor
+Copyright 2025 Jason T. Grace
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+The extension bundles pagemd and pagemd-common (Apache-2.0, same authors) and
+third-party packages; apps/vscode/ThirdPartyNotices.txt lists each one with its
+licence text, including the Inter typeface (SIL Open Font License 1.1) that
+pagemd-common's book-fonts.css embeds.
+
+The UOFO ("Uncertified Organic Farmers Org") name and logo in the test
+fixtures are invented placeholders, not a real organisation.

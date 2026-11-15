@@ -1,0 +1,256 @@
+{
+  "name": "pagemd-editor",
+  "displayName": "pagemd Editor",
+  "description": "A Word-like, page-accurate visual editor for pagemd documents inside VS Code: write on pages that already look like the final PDF.",
+  "version": "0.0.1-rc1",
+  "publisher": "gh4",
+  "license": "Apache-2.0",
+  "engines": {
+    "vscode": "^1.140.0"
+  },
+  "categories": [
+    "Visual Editors",
+    "Other"
+  ],
+  "activationEvents": [],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": "limited",
+      "description": "In a workspace you have not trusted, the editor ignores a workspace's own values of pagemdEditor.pagemdPath, pagemdEditor.browserPath and pagemdEditor.profilePacks.source (they can start programs, read files outside the workspace or choose where profile packs are downloaded from).",
+      "restrictedConfigurations": [
+        "pagemdEditor.pagemdPath",
+        "pagemdEditor.browserPath",
+        "pagemdEditor.profilePacks.source"
+      ]
+    }
+  },
+  "main": "./dist/host/extension.js",
+  "scripts": {
+    "vscode:prepublish": "node -e \"if (process.env.PMD_PACKAGING !== '1') { console.error('Packaging or publishing goes through npm run package (the project is local only: no publishing, OQ-12 and OQ-19).'); process.exit(1); }\""
+  },
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "pagemd-editor.editor",
+        "displayName": "pagemd Editor",
+        "selector": [
+          {
+            "filenamePattern": "*.md"
+          }
+        ],
+        "priority": "option"
+      }
+    ],
+    "commands": [
+      {
+        "command": "pagemd.printLayout",
+        "title": "pagemd: Print Layout"
+      },
+      {
+        "command": "pagemd.webLayout",
+        "title": "pagemd: Web Layout"
+      },
+      {
+        "command": "pagemd.draft",
+        "title": "pagemd: Draft"
+      },
+      {
+        "command": "pagemd.read",
+        "title": "pagemd: Read"
+      },
+      {
+        "command": "pagemd.code",
+        "title": "pagemd: Code"
+      },
+      {
+        "command": "pagemd.split",
+        "title": "pagemd: Split"
+      },
+      {
+        "command": "pagemd.switchView",
+        "title": "pagemd: Switch View"
+      },
+      {
+        "command": "pagemd.createLayoutFile",
+        "title": "pagemd: Create Layout File"
+      },
+      {
+        "command": "pagemd.printPreview",
+        "title": "pagemd: Print Preview"
+      },
+      {
+        "command": "pagemd.exportToPdf",
+        "title": "pagemd: Export PDF"
+      },
+      {
+        "command": "pagemd.exportToHtml",
+        "title": "pagemd: Export HTML"
+      },
+      {
+        "command": "pagemd.exportToPng",
+        "title": "pagemd: Export PNG"
+      },
+      {
+        "command": "pagemd.chooseProfile",
+        "title": "pagemd: Choose Profile"
+      },
+      {
+        "command": "pagemd.about",
+        "title": "pagemd: About this build"
+      },
+      {
+        "command": "pagemd.checkDocument",
+        "title": "pagemd: Check Document"
+      },
+      {
+        "command": "pagemd.getProfilePacks",
+        "title": "pagemd: Get Profile Packs…"
+      },
+      {
+        "command": "pagemd.reopenWithEditor",
+        "title": "pagemd: Reopen with pagemd Editor"
+      }
+    ],
+    "configuration": {
+      "title": "pagemd Editor",
+      "properties": {
+        "pagemdEditor.pagemdPath": {
+          "type": "string",
+          "default": "",
+          "scope": "machine",
+          "description": "A pagemd install's folder (holding profiles/, layouts/, styles/ and templates/), so the editor can find every one of pagemd's bundled profiles and layouts, not only the copy it ships (R-128). Leave empty to use the bundled copy."
+        },
+        "pagemdEditor.profilePacks.source": {
+          "type": "string",
+          "default": "",
+          "scope": "machine",
+          "markdownDescription": "Where \"pagemd: Get Profile Packs…\" gets profile packs from: a folder on this computer (holding `index.json` and the pack zips; a Nextcloud folder works), the address of an `index.json` (`https://` only), or a GitHub repository whose latest release carries them (for example `https://github.com/gh4-io/pagemd-library`; a private repository, such as your own company library, uses your VS Code GitHub sign-in once you set its address here). Empty: the command asks. Nothing is fetched except when you run that command, and packs are always installed into pagemd's shared profiles folder."
+        },
+        "pagemdEditor.gatedInsert": {
+          "type": "string",
+          "enum": [
+            "ask",
+            "auto",
+            "warn"
+          ],
+          "enumDescriptions": [
+            "Ask before inserting an item that needs a document property (for example, a lettered list needs fancy_lists in the frontmatter).",
+            "Insert the item and add the property to the frontmatter without asking.",
+            "Insert the item and show a hint; the frontmatter is left alone."
+          ],
+          "default": "ask",
+          "description": "What happens when you insert an item whose syntax is switched off in this document (ADR-0016). Choosing Don't Ask Again in the prompt sets this to auto."
+        },
+        "pagemdEditor.browserPath": {
+          "type": "string",
+          "default": "",
+          "scope": "machine",
+          "description": "A Chromium browser (Chrome, Edge, Chromium) for exporting PDF and PNG and drawing diagrams in exports, used when neither Chrome nor Microsoft Edge is found in its usual place (R-169). No browser is ever downloaded."
+        },
+        "pagemdEditor.imageFolder": {
+          "type": "string",
+          "default": ".pagemd/assets/img",
+          "scope": "resource",
+          "description": "Where an image you paste or drop onto the canvas is saved, as a folder below the document's own folder (no .. and no drive letter). The file keeps a clean name and an existing file is never overwritten. The figure written into the document names it relative to the document (P11)."
+        },
+        "pagemdEditor.showProblems": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the checks the document's profile asks for (its validation setting) in the Problems panel and as hints on the page. Off hides them; it never adds checks (P14)."
+        },
+        "pagemdEditor.codeEngine": {
+          "type": "string",
+          "enum": ["monaco-vscode", "codemirror"],
+          "enumDescriptions": [
+            "Monaco with VS Code's own grammar and theme services (the editor VS Code's own text editor is made of): VS Code's markdown colours in your theme, your editor.* settings, multiple cursors, find, the command palette. About 10 MB, loaded only when the Code view first opens.",
+            "The built-in lightweight view (CodeMirror): block colours, multiple cursors; nothing extra to load."
+          ],
+          "default": "monaco-vscode",
+          "scope": "window",
+          "markdownDescription": "What the Code view and Split view's code side are made of. Reopen the editor after changing it."
+        },
+        "pagemdEditor.nativeSplit": {
+          "type": "boolean",
+          "default": false,
+          "scope": "window",
+          "markdownDescription": "Turn on to make Split view open VS Code's own text editor in the next column beside the page (your theme, settings and extensions; two tabs, cursors kept together). Off (the default) keeps the built-in Code pane inside the same tab."
+        },
+        "pagemdEditor.figureStyle": {
+          "type": "string",
+          "enum": [
+            "readable",
+            "native",
+            "legacy"
+          ],
+          "enumDescriptions": [
+            "A picture is written as ![alt](src \"caption\"), which any markdown viewer shows. Only when it has a setting plain markdown cannot hold (an id, a width, a crop, a turn) or a caption, one comment line is added right under it.",
+            "A picture is written as one <!-- ::FIGURE src=\"…\" caption=\"…\" --> comment line. A viewer that does not know pagemd shows nothing.",
+            "A picture is written as a <!-- ::FIGURE … --> comment line with the ![alt](src) line under it (the older two-line form)."
+          ],
+          "default": "readable",
+          "scope": "resource",
+          "markdownDescription": "How the editor writes a NEW picture (pasted, dropped, inserted or given a caption). Pictures already in the document keep the way they were written until you edit them, and pagemd reads every style whatever this says. The command \"Make figures readable\" (slash menu) rewrites a document's figures in the readable style."
+        },
+        "pagemdEditor.commentAuthor": {
+          "type": "string",
+          "default": "",
+          "description": "The name your review comments carry. Empty: your computer's user name (P12)."
+        },
+        "pagemdEditor.openByDefault": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "markdownDescription": "File patterns that open in the pagemd editor by themselves, for example `*.pagemd.md` or `docs/**/*.md`. VS Code can only choose an editor by file name, not by what is inside the file, so you name the files. The patterns are copied into VS Code's own `workbench.editorAssociations` (in the same place, user or workspace, as this setting); a pattern you already mapped to another editor there is left as you set it. Empty by default: nothing changes until you add one. One file at a time: the command \"pagemd: Reopen with pagemd Editor\"."
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "@pagemd-editor/canvas": "0.0.0",
+    "@pagemd-editor/code-view": "0.0.0",
+    "@pagemd-editor/code-view-monaco": "0.0.0",
+    "@pagemd-editor/comments-margin": "0.0.0",
+    "@pagemd-editor/core": "0.0.0",
+    "@pagemd-editor/files-panel": "0.0.0",
+    "@pagemd-editor/image-editor": "0.0.0",
+    "@pagemd-editor/inspector": "0.0.0",
+    "@pagemd-editor/lossless": "0.0.0",
+    "@pagemd-editor/outline-panel": "0.0.0",
+    "@pagemd-editor/output-html": "0.0.0",
+    "@pagemd-editor/output-pagemd": "0.0.0",
+    "@pagemd-editor/pagination": "0.0.0",
+    "@pagemd-editor/plugin-comments": "0.0.0",
+    "@pagemd-editor/plugin-find": "0.0.0",
+    "@pagemd-editor/plugin-image-paste": "0.0.0",
+    "@pagemd-editor/plugin-keymap": "0.0.0",
+    "@pagemd-editor/plugin-source-map": "0.0.0",
+    "@pagemd-editor/preset-commonmark": "0.0.0",
+    "@pagemd-editor/preset-gfm": "0.0.0",
+    "@pagemd-editor/preset-pagemd": "0.0.0",
+    "@pagemd-editor/preview-frame": "0.0.0",
+    "@pagemd-editor/read-view": "0.0.0",
+    "@pagemd-editor/ribbon": "0.0.0",
+    "@pagemd-editor/ruler": "0.0.0",
+    "@pagemd-editor/selection-toolbar": "0.0.0",
+    "@pagemd-editor/slash-menu": "0.0.0",
+    "@pagemd-editor/split-view": "0.0.0",
+    "@pagemd-editor/status-bar": "0.0.0",
+    "@pagemd-editor/style-default": "0.0.0",
+    "@pagemd-editor/style-pagemd": "0.0.0",
+    "@pagemd-editor/template-frame": "0.0.0",
+    "@pagemd-editor/transformer": "0.0.0",
+    "@vscode/codicons": "0.0.46-24",
+    "mermaid": "12.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gh4-io/pagemd-editor.git",
+    "directory": "apps/vscode"
+  },
+  "homepage": "https://github.com/gh4-io/pagemd-editor#readme",
+  "bugs": {
+    "url": "https://github.com/gh4-io/pagemd-editor/issues"
+  }
+}

@@ -1,0 +1,25 @@
+<!doctype html>
+<!-- P10: webview.html with the real webview's Content Security Policy (EditorProvider.webviewHtml): scripts only with the
+     page's nonce, inline styles allowed (Paged.js, mermaid), files from this checkout standing in for the webview's
+     resource origin (`file:`). The Print Preview frame inherits this policy, so a document's own script must not run. -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src file: https: data:; style-src file: 'unsafe-inline'; font-src file: data:; script-src 'nonce-E2eNonce'" />
+    <title>pagemd Editor webview with its CSP (e2e)</title>
+    <link rel="stylesheet" href="../../apps/vscode/dist/webview/codicons/codicon.css" />
+    <script nonce="E2eNonce">
+      window.__toHost = [];
+      window.__pageState = null;
+      window.acquireVsCodeApi = () => ({
+        postMessage: (message) => window.__toHost.push(structuredClone(message)),
+        getState: () => window.__pageState,
+        setState: (state) => (window.__pageState = state),
+      });
+      window.__fromHost = (message) => window.postMessage(message, '*');
+    </script>
+  </head>
+  <body>
+    <script nonce="E2eNonce" src="../../apps/vscode/dist/webview/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "id": "uofo-brochure-example",
+  "description": "Worked example of the brochure boilerplate, branded as 'Uncertified Organic Farmers Org' (fictional placeholder company).",
+  "extends": "standard_letter",
+  "resources": {
+    "template": "${workingPath}/.pagemd/templates/brochure.html",
+    "css": [
+      "${workingPath}/.pagemd/styles/brochure.css"
+    ],
+    "layout": "${workingPath}/.pagemd/layouts/brochure.css"
+  },
+  "outputs": {
+    "pdf": { "enabled": true, "mode": "ACTIVE_ONLY" },
+    "html": { "enabled": false },
+    "png": { "enabled": false },
+    "jpeg": { "enabled": false }
+  }
+}

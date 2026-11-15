@@ -1,0 +1,2 @@
+# Golden-corpus files must keep their exact bytes (CRLF, trailing spaces, no final newline).
+test/corpus/files/** -text

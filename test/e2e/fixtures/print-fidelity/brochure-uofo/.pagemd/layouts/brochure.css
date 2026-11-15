@@ -1,0 +1,17 @@
+/* ============================================================================
+   Tri-Fold Brochure Layout
+   ============================================================================
+   Single landscape sheet, physically folded into 3 panels after printing.
+   No running header/footer, no page numbers — this is a single visual sheet,
+   not a paginated document, so there is nothing for Paged.js string-set to
+   capture here (contrast with corporate-sop/layouts/corporate-sop.css).
+   ============================================================================ */
+
+@page {
+  /* Explicit width-then-height dimensions, NOT the "Letter landscape" keyword
+     combo — the pinned Paged.js 0.4.3 in this pipeline silently fails to
+     parse that combo and falls back to portrait Letter (confirmed via
+     pdfinfo on the output PDF). 11in x 8.5in is landscape US Letter. */
+  size: 11in 8.5in;
+  margin: 0.4in;
+}

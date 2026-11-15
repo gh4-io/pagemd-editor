@@ -1,0 +1,19 @@
+{
+  "name": "@pagemd-editor/style-pagemd",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "description": "A pagemd document's styles as the PDF has them (P5): @pagemd/resolver finds the files, @pagemd/theme-kit builds the CSS, scoped to the canvas. Runs on the host; browser-safe (injected file system and path functions).",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@pagemd-editor/core": "0.0.0",
+    "@pagemd/meta": "npm:@gh4-io/pagemd-meta@0.0.1-rc1",
+    "@pagemd/resolver": "npm:@gh4-io/pagemd-resolver@0.0.1-rc1",
+    "@pagemd/theme-kit": "npm:@gh4-io/pagemd-theme-kit@0.0.1-rc1",
+    "postcss": "8.5.29"
+  }
+}

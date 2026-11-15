@@ -1,0 +1,15 @@
+{
+  "name": "@pagemd-editor/files-panel",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "description": "The Files in Use panel (P25, R-242): every file that builds the document in priority order, why each was chosen, and where the block at the cursor gets its look from (read-only).",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@pagemd-editor/core": "0.0.0"
+  }
+}

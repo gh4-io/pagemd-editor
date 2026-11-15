@@ -1,0 +1,21 @@
+{
+  "id": "uofo-department-memo-example",
+  "description": "Worked example of the department-memo boilerplate, branded as 'Uncertified Organic Farmers Org' (fictional placeholder company).",
+  "extends": "standard_letter",
+  "resources": {
+    "template": "${workingPath}/.pagemd/templates/department-memo.html",
+    "css": [
+      "${workingPath}/.pagemd/styles/department-memo.css"
+    ],
+    "layout": "${workingPath}/.pagemd/layouts/corporate-sop.css"
+  },
+  "outputs": {
+    "pdf": {
+      "enabled": true,
+      "mode": "ACTIVE_ONLY"
+    },
+    "html": { "enabled": false },
+    "png": { "enabled": false },
+    "jpeg": { "enabled": false }
+  }
+}

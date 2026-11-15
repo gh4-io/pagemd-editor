@@ -1,0 +1,47 @@
+/* P21 fixture (pagemd-editor docs/phases/P21.md): page types with their own headers and footers.
+   The plain page: MAIN HEADER, MAIN RIGHT, "Page N of M"; its :first clears the left header and the footer. */
+@page {
+  size: Letter;
+  margin: 1in;
+  @top-left { content: "MAIN HEADER"; }
+  @top-right { content: "MAIN RIGHT"; }
+  @bottom-center { content: "Page " counter(page) " of " counter(pages); }
+}
+@page :first {
+  @top-left { content: none; }
+  @bottom-center { content: none; }
+}
+
+/* wide: landscape; its own left header and footer; the first page of each run of wide pages has its own left header */
+@page wide {
+  size: Letter landscape;
+  margin: 0.5in 0.75in;
+  @top-left { content: "WIDE HEADER"; }
+  @bottom-center { content: "Wide page " counter(page); }
+}
+@page wide:first {
+  @top-left { content: "WIDE FIRST"; }
+}
+.page-wide { page: wide; }
+
+/* legal: a taller sheet with its own header and footer */
+@page legal {
+  size: Legal;
+  margin: 1.5in;
+  @top-left { content: "LEGAL HEADER"; }
+  @bottom-center { content: "Legal page " counter(page); }
+}
+.page-legal { page: legal; }
+
+/* clear: hides the plain page's left header (none), keeps the rest */
+@page clear {
+  @top-left { content: none; }
+}
+.page-clear { page: clear; }
+
+/* props: takes the header from the document's properties (running_header), as pagemd's letter.css does */
+@page props {
+  @top-left { content: var(--page-header-left, none); }
+  @top-right { content: var(--page-header-right, none); }
+}
+.page-props { page: props; }

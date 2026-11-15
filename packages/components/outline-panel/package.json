@@ -1,0 +1,17 @@
+{
+  "name": "@pagemd-editor/outline-panel",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "description": "The Outline panel on the left (P9): headings, figures, tables, boxes; jump to an entry; move a section by dragging or with Move up / Move down.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@pagemd-editor/core": "0.0.0",
+    "prosemirror-model": "1.25.12",
+    "prosemirror-state": "1.4.4"
+  }
+}

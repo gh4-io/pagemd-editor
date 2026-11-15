@@ -1,0 +1,15 @@
+{
+  "name": "@pagemd-editor/read-view",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "description": "Read view (P6, amendment 10): the paginated canvas, read-only, one page or a two-page spread at a time, flipped by keys or clicks.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@pagemd-editor/core": "0.0.0"
+  }
+}

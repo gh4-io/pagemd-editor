@@ -1,0 +1,69 @@
+{
+  "name": "pagemd-editor-workspace",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "description": "pagemd-editor monorepo root (npm workspaces). Nothing here is published.",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "workspaces": [
+    "packages/*",
+    "packages/components/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "node esbuild.mjs",
+    "package": "node scripts/package.mjs",
+    "package:rc": "node scripts/package.mjs --rc",
+    "typecheck": "tsc -p tsconfig.web.json && tsc -p tsconfig.node.json && tsc -p tsconfig.web-tests.json",
+    "lint:layers": "depcruise packages apps --config .dependency-cruiser.cjs",
+    "check": "npm run typecheck && npm run lint:layers",
+    "test": "vitest run",
+    "test:e2e": "npm run build && playwright test --project=smoke --project=regression --project=preflight --project=parity",
+    "test:pr": "node scripts/test-tiers.mjs pr",
+    "test:perf": "npm run build && playwright test --project=perf --workers=1",
+    "test:nightly": "node scripts/test-tiers.mjs nightly",
+    "lint:e2e": "node scripts/check-e2e-hygiene.mjs",
+    "test:vscode": "npm run build && node test/vscode/run.mjs",
+    "test:vsix": "node test/vsix/run.mjs",
+    "pagination:reference": "node scripts/pagination-reference.mjs",
+    "print-fidelity:reference": "node scripts/print-fidelity-reference.mjs",
+    "table-widths:reference": "node scripts/table-widths-reference.mjs",
+    "page-types:reference": "node scripts/page-types-reference.mjs",
+    "deps:check": "npm outdated"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@types/node": "24.19.1",
+    "@types/vscode": "1.140.0",
+    "@vscode/test-electron": "3.1.0",
+    "@vscode/vsce": "4.0.0",
+    "axe-core": "4.14.0",
+    "commonmark-spec": "0.31.2",
+    "dependency-cruiser": "18.5.0",
+    "diff": "9.0.0",
+    "esbuild": "0.28.2",
+    "fast-check": "4.10.2",
+    "typescript": "6.0.3",
+    "vitest": "5.0.3"
+  },
+  "overrides": {
+    "markdown-it": "15.0.2",
+    "linkify-it": "6.1.0",
+    "mdurl": "2.1.0"
+  },
+  "allowScripts": {
+    "esbuild": true,
+    "@vscode/vsce-sign": false
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gh4-io/pagemd-editor.git"
+  },
+  "homepage": "https://github.com/gh4-io/pagemd-editor#readme",
+  "bugs": {
+    "url": "https://github.com/gh4-io/pagemd-editor/issues"
+  }
+}

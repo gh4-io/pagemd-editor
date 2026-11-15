@@ -1,0 +1,22 @@
+{
+  "name": "@pagemd-editor/plugin-diagnostics",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "description": "pagemd problems (P14, ADR-0017): the profile's checks from @pagemd/validate, run on the host (./check), and their hints on the canvas (the default entry, no @pagemd/* import).",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./check": "./src/check.ts"
+  },
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@pagemd-editor/core": "0.0.0",
+    "@pagemd-editor/transformer": "0.0.0",
+    "@pagemd/resolver": "npm:@gh4-io/pagemd-resolver@0.0.1-rc1",
+    "@pagemd/validate": "npm:@gh4-io/pagemd-validate@0.0.1-rc1",
+    "prosemirror-model": "1.25.12",
+    "prosemirror-state": "1.4.4",
+    "prosemirror-view": "1.42.6"
+  }
+}

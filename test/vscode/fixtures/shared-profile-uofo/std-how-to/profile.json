@@ -1,0 +1,10 @@
+{
+  "id": "field-report",
+  "description": "An invented UOFO how-to profile kept beside the documents (test fixture, SAN-0b)",
+  "extends": "standard_letter",
+  "resources": {
+    "template": "./templates/corporate-sop.html",
+    "css": ["./styles/corporate-sop.css"],
+    "layout": "./layouts/corporate-sop.css"
+  }
+}

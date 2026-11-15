@@ -1,0 +1,6 @@
+{
+  "id": "report-base",
+  "description": "P25 fixture: the parent profile; it names the layout",
+  "extends": "standard_letter",
+  "resources": { "layout": "report-layout.css" }
+}

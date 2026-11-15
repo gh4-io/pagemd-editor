@@ -1,0 +1,18 @@
+{
+  "name": "@pagemd-editor/plugin-clipboard",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "description": "Copy/paste as markdown: clipboard text is the real markdown, not just plain rendered text (P3).",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@pagemd-editor/core": "0.0.0",
+    "@pagemd-editor/transformer": "0.0.0",
+    "prosemirror-model": "1.25.12",
+    "prosemirror-state": "1.4.4"
+  }
+}

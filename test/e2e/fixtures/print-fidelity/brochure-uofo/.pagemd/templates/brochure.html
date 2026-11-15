@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{metadata.title}}</title>
+    {{styles}}
+  </head>
+  <body>
+    <article class="brochure">
+      <!--
+      TRI-FOLD BROCHURE TEMPLATE
+      ==========================
+      Single landscape sheet divided into 3 vertical panels via CSS grid.
+      There is no per-panel frontmatter token. Instead, the markdown content
+      itself uses three SECTION_START / SECTION_END directive pairs (see
+      project/pagemd/docs/wiki/guides/Extended-Syntax.md for exact syntax) to
+      emit three `div class="panel panel-N"` blocks: panel-1 (cover: logo,
+      headline, tagline), panel-2 (about / what-we-do), panel-3 (contact /
+      call-to-action).
+
+      This wrapper's `.brochure-content` is styled as a 3-column table layout
+      (styles/brochure.css), so the three resulting panel divs lay out
+      side-by-side automatically. No template-side panel routing needed.
+
+      NOTE: do not put literal directive comment syntax (which itself
+      contains a comment-closing sequence) inside this docblock -- it
+      prematurely closes this HTML comment and corrupts the page. Describe
+      directives in prose, not by pasting the literal comment syntax.
+
+      FRONTMATTER VARIABLES:
+      - title: Used for the <title> tag only. The cover panel's own visible
+        headline comes from markdown content in panel 1, not from frontmatter.
+      -->
+      <main class="brochure-content">{{content}}</main>
+    </article>
+  </body>
+</html>

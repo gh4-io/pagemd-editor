@@ -1,0 +1,17 @@
+{
+  "name": "@pagemd-editor/lossless",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "description": "Re-use untouched text byte for byte; minimal edits (ADR-0007).",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@pagemd-editor/core": "0.0.0",
+    "@pagemd-editor/transformer": "0.0.0",
+    "prosemirror-model": "1.25.12"
+  }
+}

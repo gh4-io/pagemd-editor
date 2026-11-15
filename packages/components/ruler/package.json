@@ -1,0 +1,15 @@
+{
+  "name": "@pagemd-editor/ruler",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "description": "Print Layout's rulers and page guides (P6, amendment 9): margin, header and footer guides; dragging a margin asks for a layout file.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@pagemd-editor/core": "0.0.0"
+  }
+}

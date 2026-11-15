@@ -1,0 +1,11 @@
+{
+  "name": "pagemd-vsix-probe",
+  "displayName": "pagemd .vsix probe (test only)",
+  "version": "0.0.0",
+  "publisher": "gh4",
+  "private": true,
+  "license": "Apache-2.0",
+  "engines": { "vscode": "^1.140.0" },
+  "activationEvents": [],
+  "description": "Test-only. Loaded by test/vsix/run.mjs next to the INSTALLED pagemd Editor; it declares nothing and only hosts the checks in suite.cjs."
+}

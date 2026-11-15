@@ -1,0 +1,18 @@
+{
+  "name": "@pagemd-editor/transformer",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "description": "markdown-it tokens \u21c4 ProseMirror, per top-level block.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@pagemd-editor/core": "0.0.0",
+    "markdown-it": "15.0.2",
+    "prosemirror-markdown": "1.13.8",
+    "prosemirror-model": "1.25.12"
+  }
+}

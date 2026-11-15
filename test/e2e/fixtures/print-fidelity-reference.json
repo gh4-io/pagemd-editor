@@ -1,0 +1,79 @@
+{
+  "generatedBy": "scripts/print-fidelity-reference.mjs",
+  "documents": {
+    "invitation-uofo": {
+      "document": "uofo-annual-harvest-celebration.md",
+      "pdfPages": 1,
+      "page": {
+        "width": 612,
+        "height": 792
+      },
+      "probes": {
+        "INVITED": {
+          "x": 305,
+          "y": 211.9
+        },
+        "Harvest": {
+          "x": 158.2,
+          "y": 289.2
+        },
+        "Location": {
+          "x": 157,
+          "y": 443.6
+        },
+        "Pavilion,": {
+          "x": 309,
+          "y": 443.6
+        },
+        "join": {
+          "x": 173.4,
+          "y": 491.8
+        },
+        "RSVP": {
+          "x": 289.9,
+          "y": 617.3
+        },
+        "respond": {
+          "x": 258.4,
+          "y": 638.5
+        }
+      },
+      "fingerprint": "cf78fd9a1e4fcc32"
+    },
+    "brochure-uofo": {
+      "document": "uofo-company-overview-brochure.md",
+      "pdfPages": 1,
+      "page": {
+        "width": 792,
+        "height": 612
+      },
+      "probes": {
+        "Sustainably": {
+          "x": 52.4,
+          "y": 370.1
+        },
+        "What": {
+          "x": 295.2,
+          "y": 54.1
+        },
+        "Seasonal": {
+          "x": 306.2,
+          "y": 197.2
+        },
+        "Involved": {
+          "x": 567.6,
+          "y": 54.1
+        },
+        "Address:": {
+          "x": 540.4,
+          "y": 85.9
+        },
+        "Saturdays,": {
+          "x": 592.3,
+          "y": 208.4
+        }
+      },
+      "fingerprint": "b438e90b4daaae28"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "id": "report-child",
+  "description": "P25 fixture: a profile that extends another one",
+  "extends": "report-base",
+  "resources": { "css": ["report.css"] }
+}

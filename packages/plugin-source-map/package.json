@@ -1,0 +1,17 @@
+{
+  "name": "@pagemd-editor/plugin-source-map",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "description": "Maps canvas positions to places in the markdown text and back, block by block (P9: Split view's synced cursor, the Outline's links into the source).",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@pagemd-editor/core": "0.0.0",
+    "@pagemd-editor/transformer": "0.0.0",
+    "prosemirror-model": "1.25.12"
+  }
+}

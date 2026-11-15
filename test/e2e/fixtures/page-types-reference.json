@@ -1,0 +1,251 @@
+{
+  "generatedBy": "scripts/page-types-reference.mjs",
+  "ptPerIn": 72,
+  "documents": {
+    "cascade.md": [
+      {
+        "size": {
+          "width": 612,
+          "height": 792
+        },
+        "textLeft": 72,
+        "header": {
+          "left": "",
+          "center": "",
+          "right": "MAIN RIGHT"
+        },
+        "footer": {
+          "left": "",
+          "center": "",
+          "right": ""
+        }
+      },
+      {
+        "size": {
+          "width": 612,
+          "height": 792
+        },
+        "textLeft": 72,
+        "header": {
+          "left": "MAIN HEADER",
+          "center": "",
+          "right": "MAIN RIGHT"
+        },
+        "footer": {
+          "left": "",
+          "center": "Page 2 of 8",
+          "right": ""
+        }
+      },
+      {
+        "size": {
+          "width": 612,
+          "height": 792
+        },
+        "textLeft": 54,
+        "header": {
+          "left": "WIDE FIRST",
+          "center": "",
+          "right": "MAIN RIGHT"
+        },
+        "footer": {
+          "left": "",
+          "center": "Wide page 3",
+          "right": ""
+        }
+      },
+      {
+        "size": {
+          "width": 612,
+          "height": 792
+        },
+        "textLeft": 54,
+        "header": {
+          "left": "WIDE HEADER",
+          "center": "",
+          "right": "MAIN RIGHT"
+        },
+        "footer": {
+          "left": "",
+          "center": "Wide page 4",
+          "right": ""
+        }
+      },
+      {
+        "size": {
+          "width": 612,
+          "height": 792
+        },
+        "textLeft": 72,
+        "header": {
+          "left": "MAIN HEADER",
+          "center": "",
+          "right": "MAIN RIGHT"
+        },
+        "footer": {
+          "left": "",
+          "center": "Page 5 of 8",
+          "right": ""
+        }
+      },
+      {
+        "size": {
+          "width": 612,
+          "height": 792
+        },
+        "textLeft": 54,
+        "header": {
+          "left": "WIDE FIRST",
+          "center": "",
+          "right": "MAIN RIGHT"
+        },
+        "footer": {
+          "left": "",
+          "center": "Wide page 6",
+          "right": ""
+        }
+      },
+      {
+        "size": {
+          "width": 612,
+          "height": 792
+        },
+        "textLeft": 54,
+        "header": {
+          "left": "WIDE HEADER",
+          "center": "",
+          "right": "MAIN RIGHT"
+        },
+        "footer": {
+          "left": "",
+          "center": "Wide page 7",
+          "right": ""
+        }
+      },
+      {
+        "size": {
+          "width": 612,
+          "height": 792
+        },
+        "textLeft": 108,
+        "header": {
+          "left": "LEGAL HEADER",
+          "center": "",
+          "right": "MAIN RIGHT"
+        },
+        "footer": {
+          "left": "",
+          "center": "Legal page 8",
+          "right": ""
+        }
+      }
+    ],
+    "clear.md": [
+      {
+        "size": {
+          "width": 612,
+          "height": 792
+        },
+        "textLeft": 72,
+        "header": {
+          "left": "",
+          "center": "",
+          "right": "MAIN RIGHT"
+        },
+        "footer": {
+          "left": "",
+          "center": "",
+          "right": ""
+        }
+      },
+      {
+        "size": {
+          "width": 612,
+          "height": 792
+        },
+        "textLeft": 72,
+        "header": {
+          "left": "MAIN HEADER",
+          "center": "",
+          "right": "MAIN RIGHT"
+        },
+        "footer": {
+          "left": "",
+          "center": "Page 2 of 3",
+          "right": ""
+        }
+      },
+      {
+        "size": {
+          "width": 612,
+          "height": 792
+        },
+        "textLeft": 72,
+        "header": {
+          "left": "",
+          "center": "",
+          "right": "MAIN RIGHT"
+        },
+        "footer": {
+          "left": "",
+          "center": "Page 3 of 3",
+          "right": ""
+        }
+      }
+    ],
+    "props.md": [
+      {
+        "size": {
+          "width": 612,
+          "height": 792
+        },
+        "textLeft": 72,
+        "header": {
+          "left": "",
+          "center": "",
+          "right": "MAIN RIGHT"
+        },
+        "footer": {
+          "left": "",
+          "center": "",
+          "right": ""
+        }
+      },
+      {
+        "size": {
+          "width": 612,
+          "height": 792
+        },
+        "textLeft": 72,
+        "header": {
+          "left": "MAIN HEADER",
+          "center": "",
+          "right": "MAIN RIGHT"
+        },
+        "footer": {
+          "left": "",
+          "center": "Page 2 of 3",
+          "right": ""
+        }
+      },
+      {
+        "size": {
+          "width": 612,
+          "height": 792
+        },
+        "textLeft": 72,
+        "header": {
+          "left": "DOC LEFT",
+          "center": "",
+          "right": "DOC RIGHT"
+        },
+        "footer": {
+          "left": "",
+          "center": "Page 3 of 3",
+          "right": ""
+        }
+      }
+    ]
+  },
+  "fingerprint": "407948e8e2970717"
+}

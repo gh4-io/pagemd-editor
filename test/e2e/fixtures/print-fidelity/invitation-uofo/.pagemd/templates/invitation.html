@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{metadata.title}}</title>
+    {{styles}}
+  </head>
+  <body>
+    <!--
+    CORPORATE EVENT INVITATION TEMPLATE
+    ====================================
+    Single-page, portrait, no running header/footer (no Paged.js string-set
+    plumbing needed here — see boilerplate/corporate-sop for that pattern).
+
+    FRONTMATTER VARIABLES:
+    - title: Event name (rendered as the large centered headline)
+    - company_name: Host organization name (logo alt text)
+    - event_date, event_time, event_location: shown in the centered details block
+    - rsvp_by: RSVP deadline
+    - rsvp_contact: RSVP contact name/email/phone
+    -->
+    <article class="invitation">
+      <div class="invitation-logo">
+        <img
+          src=".pagemd/assets/img/uofo-logo.png"
+          alt="{{metadata.company_name ?? 'Uncertified Organic Farmers Org'}}"
+          class="invitation-logo-img"
+        />
+      </div>
+
+      <div class="invitation-kicker">You're Invited</div>
+      <h1 class="invitation-headline">{{metadata.title}}</h1>
+
+      <div class="invitation-divider" aria-hidden="true"></div>
+
+      <div class="invitation-details">
+        <div class="detail-row">
+          <span class="detail-label">Date</span>
+          <span class="detail-value">{{metadata.event_date}}</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Time</span>
+          <span class="detail-value">{{metadata.event_time}}</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Location</span>
+          <span class="detail-value">{{metadata.event_location}}</span>
+        </div>
+      </div>
+
+      <div class="invitation-body">{{content}}</div>
+
+      <div class="invitation-rsvp">
+        <div class="rsvp-label">RSVP</div>
+        <div class="rsvp-line">Please respond by {{metadata.rsvp_by}}</div>
+        <div class="rsvp-line">{{metadata.rsvp_contact}}</div>
+      </div>
+    </article>
+  </body>
+</html>

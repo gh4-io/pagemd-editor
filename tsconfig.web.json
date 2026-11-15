@@ -1,0 +1,9 @@
+{
+  "//": "Browser side: every package and the webview. No Node or vscode types here.",
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": []
+  },
+  "include": ["packages/*/src", "packages/components/*/src", "apps/vscode/webview", "apps/vscode/shared"]
+}

@@ -1,0 +1,114 @@
+/* ============================================================================
+   Custom PageMD Layout - Page Margins & Running Footers
+   ============================================================================
+
+   PAGED.JS STRING-SET REQUIREMENTS:
+   ---------------------------------
+   1. Source elements MUST be in the render tree (NOT display:none)
+      Use: height:0; overflow:hidden; font-size:0;
+
+   2. String concatenation in CSS content property DOES NOT WORK
+      BAD:  content: string(status) " - Suffix";
+      GOOD: content: string(footer-text);
+
+   3. Do all text concatenation in the HTML template instead:
+      <span class="footer-left-string">{{status}} - Suffix</span>
+
+   See template: .pagemd/templates/corporate-sop.html
+   Theme custom properties (--brand-*) are defined in styles/corporate-sop.css,
+   which loads before this layout — see boilerplate/shared/THEME.md.
+   ============================================================================ */
+
+/* Capture the pre-built footer text from the template */
+.footer-left-string {
+  string-set: footer-left content();
+}
+
+/* Capture the pre-built header text from the template */
+.header-right-string {
+  string-set: header-right content();
+}
+
+.header-left-string {
+  string-set: header-left content();
+}
+
+@page {
+  size: Letter;
+  /* Expanded margins: header/footer zones live OUTSIDE content area
+     Top: 0.875in (header zone)
+     Right: 0.75in
+     Bottom: 0.875in (footer zone)
+     Left: 1in
+  */
+  margin: 0.875in 0.75in 0.875in 1in;
+
+  /* Top right header: Doc ID and Revision (all pages except first) */
+  @top-right {
+    content: string(header-right);
+    white-space: pre;
+    font-family: var(--brand-font-body);
+    font-size: 9pt;
+    color: var(--brand-muted);
+    font-weight: 400;
+    text-align: right;
+    vertical-align: bottom;
+    padding-bottom: 0.1in;    /* Space between header and content */
+    padding-right: 0.125in;   /* Inset from page edge */
+    border-bottom: 0.5pt solid var(--brand-border);  /* Divider line */
+  }
+
+  /* Left header: Dynamic status from frontmatter */
+  @top-left {
+    content: string(header-left);
+    font-family: var(--brand-font-body);
+    font-size: 9pt;
+    color: var(--brand-muted);
+    font-weight: 400;
+    vertical-align: bottom;
+    padding-bottom: 0.1in;       /* Space between content and footer */
+    padding-left: 0.125in;    /* Inset from page edge */
+    border-bottom: 0.5pt solid var(--brand-border);  /* Divider line */
+  }
+
+
+  /* Left footer: Dynamic status from frontmatter */
+  @bottom-left {
+    content: string(footer-left);
+    font-family: var(--brand-font-body);
+    font-size: 8pt;
+    color: var(--brand-muted);
+    font-weight: 400;
+    vertical-align: top;
+    padding-top: 0.1in;       /* Space between content and footer */
+    padding-left: 0.125in;    /* Inset from page edge */
+    border-top: 0.5pt solid var(--brand-border);  /* Divider line */
+  }
+
+  /* Right footer: Page numbers (native CSS counters work fine) */
+  @bottom-right {
+    content: "Page " counter(page) " of " counter(pages);
+    font-family: var(--brand-font-body);
+    font-size: 9pt;
+    color: var(--brand-text-secondary);
+    font-weight: 500;
+    vertical-align: top;
+    padding-top: 0.1in;       /* Space between content and footer */
+    padding-right: 0.125in;   /* Inset from page edge */
+    border-top: 0.5pt solid var(--brand-border);  /* Divider line */
+  }
+}
+
+/* First page: suppress running header (title block serves as header) */
+@page:first {
+  /* Slightly smaller top margin since title block is body content */
+  margin-top: 0.625in;
+
+  @top-right {
+    content: none;
+  }
+
+  @top-left {
+    content: none;
+  }
+}

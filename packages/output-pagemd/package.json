@@ -1,0 +1,17 @@
+{
+  "name": "@pagemd-editor/output-pagemd",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "description": "Print Preview and Export through pagemd's own renderer, in-process (P10, ADR-0008): host only, optional. Its runtime file is bundled from the local pagemd checkout (AD-P10-01) and loaded on first use.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./packs": "./src/packs.ts"
+  },
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@pagemd-editor/core": "0.0.0",
+    "@pagemd/packs": "npm:@gh4-io/pagemd-packs@0.0.1-rc1"
+  }
+}

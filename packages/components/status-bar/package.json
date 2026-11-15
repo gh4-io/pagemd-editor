@@ -1,0 +1,15 @@
+{
+  "name": "@pagemd-editor/status-bar",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "description": "The strip under the canvas: view, zoom, page and layout notes (basic, P2).",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@pagemd-editor/core": "0.0.0"
+  }
+}

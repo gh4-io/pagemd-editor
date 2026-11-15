@@ -1,0 +1,9 @@
+{
+  "//": "Tests of browser code (webview, components, preset-pagemd: P4, the Playwright specs) that run from Node: DOM and Node types. Added in P2.",
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": ["node"]
+  },
+  "include": ["apps/vscode/test/webview.test.ts", "apps/vscode/test/ribbon-app.test.ts", "apps/vscode/test/cohesion-surfaces.test.ts", "packages/components/*/test", "packages/plugin-keymap/test", "packages/preset-pagemd/test", "packages/plugin-source-map/test", "packages/plugin-diagnostics/test", "packages/preset-pagemd/src/shared/pagemd-modules.d.ts", "test/types", "test/e2e"]
+}

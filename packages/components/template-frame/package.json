@@ -1,0 +1,15 @@
+{
+  "name": "@pagemd-editor/template-frame",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "description": "The profile's HTML template drawn around the canvas's text area (P18, R-228): not editable, made safe, kept in place while the properties change.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@pagemd-editor/core": "0.0.0"
+  }
+}

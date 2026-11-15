@@ -1,0 +1,85 @@
+{
+  "generatedBy": "scripts/pagination-reference.mjs",
+  "documents": {
+    "tests/corpus/pagemd/examples/md/01-basic-document.md": {
+      "bodyPages": 4,
+      "pdfPages": 4,
+      "fingerprint": "8837780962adf80e"
+    },
+    "tests/corpus/pagemd/examples/md/02-color-scheme-test.md": {
+      "bodyPages": 3,
+      "pdfPages": 3,
+      "fingerprint": "be26b61aead817d7"
+    },
+    "tests/corpus/pagemd/examples/md/03-stress-test-document.md": {
+      "bodyPages": 6,
+      "pdfPages": 6,
+      "fingerprint": "bbb7c500676b8a6f"
+    },
+    "tests/corpus/pagemd/examples/md/04-fancy-lists-stress.md": {
+      "bodyPages": 10,
+      "pdfPages": 10,
+      "fingerprint": "47ea060171c1b45c"
+    },
+    "tests/corpus/pagemd/examples/md/05-extended-syntax-stress.md": {
+      "bodyPages": 19,
+      "pdfPages": 19,
+      "fingerprint": "42d89b5b63f35579"
+    },
+    "tests/corpus/pagemd/examples/md/06-index-stress.md": {
+      "bodyPages": 15,
+      "pdfPages": 19,
+      "fingerprint": "06b3bfcda18e876a"
+    },
+    "tests/corpus/pagemd/examples/md/07-title-page-stress.md": {
+      "bodyPages": 3,
+      "pdfPages": 6,
+      "fingerprint": "bc2eaf336062659e"
+    },
+    "tests/corpus/pagemd/examples/md/08-cover-page-stress.md": {
+      "bodyPages": 3,
+      "pdfPages": 4,
+      "fingerprint": "a20705020fac2d92"
+    },
+    "tests/corpus/pagemd/examples/md/09-toc-stress.md": {
+      "bodyPages": 11,
+      "pdfPages": 17,
+      "fingerprint": "3939eac563dbdd74"
+    },
+    "tests/corpus/pagemd/examples/md/10-index-multipage-stress.md": {
+      "bodyPages": 23,
+      "pdfPages": 35,
+      "fingerprint": "696af603e0f5ef55"
+    },
+    "tests/corpus/pagemd/examples/md/11-technical-report-multipage.md": {
+      "bodyPages": 4,
+      "pdfPages": 6,
+      "fingerprint": "a5f7377c396a5184"
+    },
+    "tests/corpus/pagemd/examples/md/12-user-guide-multipage.md": {
+      "bodyPages": 8,
+      "pdfPages": 14,
+      "fingerprint": "6d6f1779aa68a392"
+    },
+    "tests/corpus/pagemd/examples/md/13-comprehensive-stress.md": {
+      "bodyPages": 17,
+      "pdfPages": 17,
+      "fingerprint": "a28afdb32ee589a4"
+    },
+    "tests/corpus/pagemd/examples/md/14-wiki-book.md": {
+      "bodyPages": 226,
+      "pdfPages": 227,
+      "fingerprint": "e3f250119d752bf4"
+    },
+    "tests/corpus/pagemd/examples/md/15-advanced-tables.md": {
+      "bodyPages": 4,
+      "pdfPages": 4,
+      "fingerprint": "e3aaca31dcc3b829"
+    },
+    "tests/corpus/pagemd/examples/md/16-table-column-widths.md": {
+      "bodyPages": 6,
+      "pdfPages": 6,
+      "fingerprint": "cefda4e7cd35ae06"
+    }
+  }
+}
